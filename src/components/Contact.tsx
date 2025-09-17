@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
+import page8Image from "@/assets/page-8.png";
 
 const Contact = () => {
   const contactInfo = [
@@ -99,6 +100,15 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="animate-fade-in">
+            {/* Page 8 Image */}
+            <div className="mb-8">
+              <img 
+                src={page8Image} 
+                alt="Professional using mobile device" 
+                className="w-full h-64 object-cover rounded-2xl shadow-elegant"
+              />
+            </div>
+            
             <Card className="bg-gradient-card border-0 shadow-elegant">
               <CardHeader>
                 <CardTitle className="text-2xl text-foreground">

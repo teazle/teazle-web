@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { ArrowRight, Play } from "lucide-react";
+import page7Image from "@/assets/page-7.png";
 
 const Hero = () => {
   return (
@@ -58,30 +59,13 @@ const Hero = () => {
 
             {/* Product Showcase */}
             <div className="relative animate-scale-in">
-              <Card className="bg-gradient-card border-0 shadow-elegant p-8 backdrop-blur-sm">
-                <div className="bg-teazle-teal rounded-lg p-6 text-center shadow-glow">
-                  <div className="text-primary-foreground">
-                    <h3 className="text-2xl font-bold mb-2">TEAZLE</h3>
-                    <p className="text-primary-foreground/80 mb-4">Innovation for a Better World</p>
-                    <div className="w-12 h-1 bg-primary-foreground/60 mx-auto rounded-full"></div>
-                  </div>
-                </div>
-                
-                <div className="mt-6 space-y-3">
-                  <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
-                    <span className="text-sm font-medium">Response Time</span>
-                    <span className="text-primary font-bold">1 min</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
-                    <span className="text-sm font-medium">Automation Rate</span>
-                    <span className="text-primary font-bold">98%</span>
-                  </div>
-                  <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
-                    <span className="text-sm font-medium">Active Workflows</span>
-                    <span className="text-primary font-bold">24/7</span>
-                  </div>
-                </div>
-              </Card>
+              <div className="relative overflow-hidden rounded-2xl shadow-elegant">
+                <img 
+                  src={page7Image} 
+                  alt="Teazle Innovation for a Better World" 
+                  className="w-full h-auto object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
