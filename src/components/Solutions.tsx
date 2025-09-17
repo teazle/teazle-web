@@ -70,16 +70,16 @@ const Solutions = () => {
           {solutions.map((solution, index) => {
             const Icon = solution.icon;
             return (
-              <Card 
-                key={solution.title}
-                className="bg-gradient-card border-0 shadow-soft hover:shadow-elegant transition-all duration-300 animate-scale-in group"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
+               <Card 
+                 key={solution.title}
+                 className="bg-gradient-card border-0 shadow-soft hover:shadow-elegant hover-scale transition-all duration-500 animate-fade-in opacity-0 group"
+                 style={{ animationDelay: `${index * 0.2}s`, animationFillMode: 'forwards' }}
+               >
                 <CardHeader>
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                      <Icon className="w-6 h-6" />
-                    </div>
+                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
+                     <Icon className="w-6 h-6" />
+                   </div>
                     <CheckCircle className="w-6 h-6 text-primary" />
                   </div>
                   <CardTitle className="text-xl text-foreground">
@@ -119,16 +119,16 @@ const Solutions = () => {
             {workflowSteps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <div 
-                  key={step.title}
-                  className="relative animate-scale-in"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <Card className="bg-gradient-card border-0 shadow-soft hover:shadow-elegant transition-all duration-300 h-full">
-                    <CardContent className="p-6 text-center">
-                      <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-teazle-light-mint text-primary mb-4">
-                        <Icon className="w-6 h-6" />
-                      </div>
+                 <div 
+                   key={step.title}
+                   className="relative animate-fade-in opacity-0"
+                   style={{ animationDelay: `${index * 0.3}s`, animationFillMode: 'forwards' }}
+                 >
+                   <Card className="bg-gradient-card border-0 shadow-soft hover:shadow-elegant hover-scale transition-all duration-300 h-full group">
+                     <CardContent className="p-6 text-center">
+                       <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-teazle-light-mint text-primary mb-4 group-hover:scale-110 transition-transform duration-300">
+                         <Icon className="w-6 h-6" />
+                       </div>
                       <h4 className="font-semibold text-foreground mb-3">
                         {step.title}
                       </h4>
@@ -150,11 +150,11 @@ const Solutions = () => {
             })}
           </div>
 
-          <div className="text-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-soft">
-              View All Workflow Examples
-            </Button>
-          </div>
+           <div className="text-center animate-fade-in" style={{ animationDelay: '1.2s' }}>
+             <Button size="lg" className="bg-primary hover:bg-primary/90 hover:scale-105 shadow-soft hover:shadow-elegant transition-all duration-300">
+               View All Workflow Examples
+             </Button>
+           </div>
         </div>
       </div>
     </section>

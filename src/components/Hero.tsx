@@ -25,21 +25,21 @@ const Hero = () => {
                 Automate customer interactions and boost your team's productivity with intelligent AI solutions tailored for enterprise growth.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+              <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
                 <Button 
                   size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-soft group"
+                  className="bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground shadow-soft group transition-all duration-300"
                 >
                   Get Started
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
+                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-all duration-300" />
                 </Button>
                 
                 <Button 
                   variant="outline" 
                   size="lg"
-                  className="border-primary text-primary hover:bg-primary/10"
+                  className="border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all duration-300"
                 >
-                  <Play className="mr-2 h-5 w-5" />
+                  <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
                   Watch Demo
                 </Button>
               </div>
