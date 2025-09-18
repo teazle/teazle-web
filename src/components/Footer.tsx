@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { LazyImage } from "@/components/ui/lazy-image";
 import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
-import teazleLogo from "@/assets/teazle-logo.png";
+import teazleLogo from "@/assets/teazle_logo.webp";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,28 +20,13 @@ const Footer = () => {
     {
       title: "Company",
       links: [
-        { name: "About Us", href: "#about" },
-        { name: "Our Team", href: "#about" },
-        { name: "Careers", href: "#" },
-        { name: "Press", href: "#" }
-      ]
-    },
-    {
-      title: "Resources",
-      links: [
-        { name: "Documentation", href: "#" },
-        { name: "API Reference", href: "#" },
-        { name: "Case Studies", href: "#" },
-        { name: "Blog", href: "#" }
+        { name: "About Us", href: "#about" }
       ]
     },
     {
       title: "Support",
       links: [
-        { name: "Help Center", href: "#" },
-        { name: "Contact Us", href: "#contact" },
-        { name: "System Status", href: "#" },
-        { name: "Privacy Policy", href: "#" }
+        { name: "Contact Us", href: "#contact" }
       ]
     }
   ];
@@ -60,10 +46,10 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-2">
               <div className="flex items-center mb-6">
-                <img 
+                <LazyImage 
                   src={teazleLogo} 
                   alt="Teazle" 
-                  className="h-8 w-auto"
+                  className="h-8 w-auto !bg-transparent"
                 />
               </div>
               
@@ -80,7 +66,7 @@ const Footer = () => {
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <Mail className="w-4 h-4 text-primary" />
-                  <span className="text-muted-foreground">hello@teazle.ai</span>
+                  <span className="text-muted-foreground">vincent.yap@teazlemedia.com</span>
                 </div>
                 <div className="flex items-center gap-3 text-sm">
                   <MapPin className="w-4 h-4 text-primary" />
@@ -144,13 +130,13 @@ const Footer = () => {
             </div>
             
             <div className="flex items-center gap-6 text-sm">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="/terms-of-service" className="text-muted-foreground hover:text-primary transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="/cookie-policy" className="text-muted-foreground hover:text-primary transition-colors">
                 Cookie Policy
               </a>
             </div>

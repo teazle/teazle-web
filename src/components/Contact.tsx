@@ -1,9 +1,8 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, ArrowRight } from "lucide-react";
-import page8Image from "@/assets/page-8.png";
+import { Card, CardContent } from "@/components/ui/card";
+import { LazyImage } from "@/components/ui/lazy-image";
+import { Phone, Mail, ArrowRight } from "lucide-react";
+import page8Image from "@/assets/page-8.webp";
 
 const Contact = () => {
   const contactInfo = [
@@ -11,19 +10,15 @@ const Contact = () => {
       icon: Phone,
       title: "Call Us",
       details: "+65 91031399",
-      description: "Available 24/7 for urgent inquiries"
+      description: "Available 24/7 for urgent inquiries",
+      action: () => window.open("tel:+6591031399", "_self")
     },
     {
       icon: Mail,
-      title: "Email Us",
-      details: "hello@teazle.ai",
-      description: "We'll respond within 24 hours"
-    },
-    {
-      icon: MapPin,
-      title: "Visit Us",
-      details: "Singapore",
-      description: "Schedule a consultation"
+      title: "Email Us", 
+      details: "vincent.yap@teazlemedia.com",
+      description: "We'll respond within 24 hours",
+      action: () => window.open("mailto:vincent.yap@teazlemedia.com", "_self")
     }
   ];
 
@@ -54,8 +49,9 @@ const Contact = () => {
                 return (
                   <Card 
                     key={info.title}
-                    className="bg-gradient-card border-0 shadow-soft hover:shadow-elegant transition-all duration-300 animate-scale-in"
+                    className="bg-gradient-card border-0 shadow-soft hover:shadow-elegant transition-all duration-300 animate-scale-in cursor-pointer"
                     style={{ animationDelay: `${index * 0.1}s` }}
+                    onClick={info.action}
                   >
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
@@ -80,109 +76,19 @@ const Contact = () => {
               })}
             </div>
 
-            {/* CTA Box */}
-            <Card className="bg-gradient-hero border-0 shadow-elegant">
-              <CardContent className="p-8 text-center">
-                <h4 className="text-2xl font-bold text-foreground mb-4">
-                  Ready to Transform Your Business?
-                </h4>
-                <p className="text-muted-foreground mb-6 leading-relaxed">
-                  Join 500+ businesses that trust Teazle for their automation needs. 
-                  Schedule a free consultation today.
-                </p>
-                <Button size="lg" className="bg-primary hover:bg-primary/90 shadow-soft group">
-                  Schedule Free Consultation
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
-                </Button>
-              </CardContent>
-            </Card>
+
           </div>
 
           {/* Contact Form */}
           <div className="animate-fade-in">
             {/* Page 8 Image */}
             <div className="mb-8">
-              <img 
+              <LazyImage 
                 src={page8Image} 
                 alt="Professional using mobile device" 
-                className="w-full h-64 object-cover rounded-2xl shadow-elegant"
+                className="w-full h-64 object-cover rounded-2xl shadow-elegant hover:scale-105 transition-transform duration-700"
               />
             </div>
-            
-            <Card className="bg-gradient-card border-0 shadow-elegant">
-              <CardHeader>
-                <CardTitle className="text-2xl text-foreground">
-                  Send us a Message
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
-                      First Name
-                    </label>
-                    <Input 
-                      placeholder="John"
-                      className="bg-background border-border focus:border-primary"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
-                      Last Name
-                    </label>
-                    <Input 
-                      placeholder="Doe"
-                      className="bg-background border-border focus:border-primary"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Email Address
-                  </label>
-                  <Input 
-                    type="email"
-                    placeholder="john@company.com"
-                    className="bg-background border-border focus:border-primary"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Company
-                  </label>
-                  <Input 
-                    placeholder="Your Company Name"
-                    className="bg-background border-border focus:border-primary"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
-                    Message
-                  </label>
-                  <Textarea 
-                    placeholder="Tell us about your automation needs..."
-                    rows={4}
-                    className="bg-background border-border focus:border-primary resize-none"
-                  />
-                </div>
-
-                <Button 
-                  size="lg" 
-                  className="w-full bg-primary hover:bg-primary/90 shadow-soft group"
-                >
-                  Send Message
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
-                </Button>
-
-                <p className="text-xs text-muted-foreground text-center">
-                  By submitting this form, you agree to our privacy policy. 
-                  We'll never share your information with third parties.
-                </p>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </div>

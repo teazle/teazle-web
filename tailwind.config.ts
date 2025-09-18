@@ -53,6 +53,17 @@ export default {
           "deep-teal": "hsl(var(--teazle-deep-teal))",
           "light-mint": "hsl(var(--teazle-light-mint))",
           neutral: "hsl(var(--teazle-neutral))",
+          // Less bright tiffany blue variations (10% less bright)
+          50: "hsl(180, 83%, 87%)",
+          100: "hsl(180, 83%, 82%)",
+          200: "hsl(180, 83%, 77%)",
+          300: "hsl(180, 83%, 72%)",
+          400: "hsl(180, 83%, 67%)",
+          500: "hsl(180, 83%, 57%)", // Main color - 10% less bright
+          600: "hsl(180, 83%, 52%)",
+          700: "hsl(180, 83%, 47%)",
+          800: "hsl(180, 83%, 42%)",
+          900: "hsl(180, 83%, 37%)",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",

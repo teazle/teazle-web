@@ -12,7 +12,7 @@ const Benefits = () => {
     },
     {
       icon: Target,
-      percentage: "40%",
+      percentage: "70%",
       title: "Conversion Increase",
       description: "Grow revenue via intelligent automation",
       color: "text-accent"
@@ -38,10 +38,10 @@ const Benefits = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
-            Key Benefits
+            Your Business, Transformed by AI
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Transform your business operations with measurable results and proven ROI
+            Clarity, speed, and measurable ROI — tailored to your success.
           </p>
         </div>
 

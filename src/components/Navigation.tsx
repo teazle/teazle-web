@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { LazyImage } from "@/components/ui/lazy-image";
 import { Menu, X } from "lucide-react";
-import teazleLogo from "@/assets/teazle-logo.png";
+import teazleLogo from "@/assets/teazle_logo.webp";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navigationItems = [
     { name: "Solutions", href: "#solutions" },
-    { name: "Services", href: "#services" },
     { name: "About", href: "#about" },
     { name: "Contact", href: "#contact" },
   ];
@@ -19,10 +19,10 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center animate-scale-in">
-            <img 
+            <LazyImage 
               src={teazleLogo} 
               alt="Teazle - Translating Vision into Reality" 
-              className="h-8 w-auto hover-scale transition-transform duration-300"
+              className="h-8 w-auto hover-scale transition-transform duration-300 !bg-transparent"
             />
           </div>
 
@@ -44,7 +44,16 @@ const Navigation = () => {
 
           {/* CTA Button */}
           <div className="hidden md:block animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Button variant="default" className="bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-soft hover:shadow-elegant">
+            <Button 
+              variant="default" 
+              className="bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-300 shadow-soft hover:shadow-elegant"
+              onClick={() => {
+                const contactSection = document.getElementById('contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               Get Started
             </Button>
           </div>
@@ -77,7 +86,17 @@ const Navigation = () => {
                 </a>
               ))}
               <div className="px-3 py-2">
-                <Button variant="default" className="w-full bg-primary hover:bg-primary/90">
+                <Button 
+                  variant="default" 
+                  className="w-full bg-primary hover:bg-primary/90"
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    setIsOpen(false);
+                  }}
+                >
                   Get Started
                 </Button>
               </div>

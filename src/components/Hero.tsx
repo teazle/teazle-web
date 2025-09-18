@@ -1,7 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { LazyImage } from "@/components/ui/lazy-image";
+import { FloatingElement, TiltCard, GlowEffect } from "@/components/ui/3d-animations";
 import { ArrowRight, Play } from "lucide-react";
-import page7Image from "@/assets/page-7.png";
+import namecardImage from "@/assets/namecard image.webp";
 
 const Hero = () => {
   return (
@@ -16,57 +18,50 @@ const Hero = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Content */}
             <div className="animate-fade-in">
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-                AI Automation
-                <span className="block text-primary">for Business</span>
-              </h1>
+              <FloatingElement delay={200} amplitude={5}>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+                  AI Automation
+                  <span className="block text-primary">for Business</span>
+                </h1>
+              </FloatingElement>
               
-              <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
-                Automate customer interactions and boost your team's productivity with intelligent AI solutions tailored for enterprise growth.
-              </p>
+              <FloatingElement delay={400} amplitude={3}>
+                <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed max-w-2xl">
+                  Automate customer interactions and boost your team's productivity with intelligent AI solutions tailored for enterprise growth.
+                </p>
+              </FloatingElement>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground shadow-soft group transition-all duration-300"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-all duration-300" />
-                </Button>
-                
-                <Button 
-                  variant="outline" 
-                  size="lg"
-                  className="border-primary text-primary hover:bg-primary/10 hover:scale-105 transition-all duration-300"
-                >
-                  <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform duration-300" />
-                  Watch Demo
-                </Button>
-              </div>
-
-              {/* Trust Indicators */}
-              <div className="flex items-center gap-8 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span>Trusted by 500+ businesses</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span>99.9% uptime</span>
-                </div>
+                <GlowEffect color="rgb(59, 130, 246)" intensity={0.3}>
+                  <Button 
+                    size="lg" 
+                    className="bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground shadow-soft group transition-all duration-300"
+                    onClick={() => {
+                      const contactSection = document.getElementById('contact');
+                      if (contactSection) {
+                        contactSection.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                  >
+                    Get Started
+                    <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-all duration-300" />
+                  </Button>
+                </GlowEffect>
               </div>
             </div>
 
             {/* Product Showcase */}
-            <div className="relative animate-scale-in">
-              <div className="relative overflow-hidden rounded-2xl shadow-elegant">
-                <img 
-                  src={page7Image} 
-                  alt="Teazle Innovation for a Better World" 
-                  className="w-full h-auto object-cover"
-                />
-              </div>
-            </div>
+            <TiltCard className="relative animate-scale-in w-4/5 mx-auto">
+              <Card className="relative overflow-hidden rounded-2xl shadow-elegant bg-card border-border/50 p-5 mt-12">
+                <div className="relative overflow-hidden rounded-xl">
+                  <LazyImage 
+                    src={namecardImage} 
+                    alt="Teazle Innovation for a Better World" 
+                    className="w-full h-auto object-cover hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
+              </Card>
+            </TiltCard>
           </div>
         </div>
       </div>

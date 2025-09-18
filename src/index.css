@@ -9,51 +9,55 @@ All colors MUST be HSL.
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 180 15% 15%;
+    --foreground: 195 25% 35%;
 
     --card: 0 0% 100%;
-    --card-foreground: 180 15% 15%;
+    --card-foreground: 195 25% 35%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 180 15% 15%;
+    --popover-foreground: 195 25% 35%;
 
-    --primary: 178 30% 45%;
+    --primary: 180 83% 42%; /* Reduced by 10% from 47% to 42% */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 175 25% 85%;
-    --secondary-foreground: 180 15% 15%;
+    --secondary: 180 40% 95%;
+    --secondary-foreground: 195 25% 35%;
 
-    --muted: 175 15% 95%;
-    --muted-foreground: 180 8% 45%;
+    --muted: 180 25% 100%;
+    --muted-foreground: 195 15% 60%;
 
-    --accent: 177 35% 70%;
-    --accent-foreground: 180 15% 15%;
+    --accent: 180 55% 75%;
+    --accent-foreground: 195 25% 35%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84.2% 80.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 175 15% 90%;
-    --input: 175 15% 90%;
-    --ring: 178 30% 45%;
+    --border: 180 20% 100%;
+    --input: 180 20% 100%;
+    --ring: 180 83% 42%; /* Reduced by 10% from 47% to 42% */
 
     --radius: 0.75rem;
 
-    /* Teazle Brand Colors */
-    --teazle-mint: 175 40% 75%;
-    --teazle-teal: 178 30% 45%;
-    --teazle-deep-teal: 180 35% 35%;
-    --teazle-light-mint: 175 25% 88%;
-    --teazle-neutral: 180 8% 45%;
+    /* Teazle Brand Colors - Reduced by 10% */
+    --teazle-mint: 180 83% 42%; /* Reduced by 10% from 47% to 42% */
+    --teazle-teal: 180 83% 37%; /* Reduced by 10% from 42% to 37% */
+    --teazle-deep-teal: 180 83% 32%; /* Reduced by 10% from 37% to 32% */
+    --teazle-light-mint: 180 30% 100%;
+    --teazle-neutral: 195 15% 60%;
 
-    /* Gradients */
+    /* Gradients - Brighter and more vibrant */
+    --gradient-primary: linear-gradient(135deg, hsl(180, 70%, 55%) 0%, hsl(180, 50%, 85%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(180, 40%, 95%) 0%, hsl(180, 30%, 100%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(180, 55%, 75%) 0%, hsl(180, 70%, 55%) 100%);
     --gradient-hero: linear-gradient(135deg, hsl(var(--teazle-light-mint)), hsl(var(--teazle-mint)));
-    --gradient-section: linear-gradient(180deg, hsl(var(--teazle-light-mint) / 0.3), hsl(var(--teazle-mint) / 0.1));
-    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--teazle-light-mint) / 0.5));
+    --gradient-section: linear-gradient(180deg, hsl(var(--teazle-light-mint) / 0.3), hsl(var(--teazle-mint) / 0.15));
+    --gradient-card: linear-gradient(145deg, hsl(var(--background)), hsl(var(--teazle-light-mint) / 0.4));
 
-    /* Shadows */
-    --shadow-soft: 0 4px 20px hsl(var(--teazle-teal) / 0.1);
-    --shadow-elegant: 0 10px 40px hsl(var(--teazle-teal) / 0.15);
-    --shadow-glow: 0 0 30px hsl(var(--teazle-mint) / 0.3);
+    /* Shadows - Brighter and more prominent */
+    --shadow-soft: 0 2px 8px hsla(180, 70%, 55%, 0.15);
+    --shadow-medium: 0 4px 16px hsla(180, 70%, 55%, 0.2);
+    --shadow-elegant: 0 8px 32px hsla(180, 70%, 55%, 0.25);
+    --shadow-glow: 0 0 20px hsla(180, 70%, 55%, 0.3);
 
     /* Animation */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -76,38 +80,43 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 180 15% 8%;
-    --foreground: 175 15% 95%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 180 20% 12%;
-    --card-foreground: 175 15% 95%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 180 20% 12%;
-    --popover-foreground: 175 15% 95%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 177 35% 70%;
-    --primary-foreground: 180 15% 8%;
+    --primary: 180 83% 57%; /* Reduced by 10% from 67% to 57% */
+    --primary-foreground: 222.2 84% 4.9%;
 
-    --secondary: 180 20% 15%;
-    --secondary-foreground: 175 15% 85%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 180 15% 18%;
-    --muted-foreground: 175 8% 65%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 178 30% 25%;
-    --accent-foreground: 175 15% 85%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 62.8% 50%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 180 15% 20%;
-    --input: 180 15% 20%;
-    --ring: 177 35% 70%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 180 83% 57%; /* Reduced by 10% from 67% to 57% */
 
-    /* Dark mode gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--teazle-deep-teal) / 0.8), hsl(var(--teazle-teal) / 0.6));
-    --gradient-section: linear-gradient(180deg, hsl(var(--teazle-teal) / 0.2), hsl(var(--teazle-deep-teal) / 0.1));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--teazle-teal) / 0.3));
+    /* Brand Colors - Reduced by 10% */
+    --teazle-mint: 180 83% 57%; /* Reduced by 10% from 67% to 57% */
+    --teazle-teal: 180 83% 52%; /* Reduced by 10% from 62% to 52% */
+    --teazle-blue: 180 83% 47%; /* Reduced by 10% from 57% to 47% */
+
+    /* Gradients - Less bright */
+    --gradient-hero: linear-gradient(135deg, hsl(180, 83%, 57%) 0%, hsl(180, 83%, 52%) 100%);
+    --gradient-section: linear-gradient(180deg, hsl(180, 83%, 57% / 0.15), hsl(180, 83%, 52% / 0.1));
+    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--teazle-teal) / 0.15))
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -123,23 +132,38 @@ All colors MUST be HSL.
   * {
     @apply border-border;
   }
-
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gradient-to-br from-background via-teazle-light-mint/10 to-teazle-mint/5 text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
+}
 
-  /* Smooth scroll behavior */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Custom transitions */
+@layer components {
+  /* Enhanced transitions for smoother interactions */
   .transition-smooth {
-    transition: var(--transition-smooth);
+    @apply transition-all duration-300 ease-out;
   }
-
-  /* Glassmorphism effect */
-  .backdrop-blur-soft {
-    backdrop-filter: blur(8px);
+  
+  /* More subtle glass effect */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px hsla(180, 70%, 55%, 0.25);
+  }
+  
+  /* Brighter gradient backgrounds */
+  .gradient-hero {
+    background: linear-gradient(135deg, hsl(180, 70%, 55% / 0.8), hsl(180, 50%, 85% / 0.6));
+  }
+  
+  .gradient-section {
+    background: linear-gradient(180deg, hsl(180, 30%, 100% / 0.4), hsl(180, 50%, 85% / 0.2));
+  }
+  
+  /* Brighter card styling */
+  .card-light {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid hsl(180, 70%, 55% / 0.3);
   }
 }

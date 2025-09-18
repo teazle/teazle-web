@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { CheckCircle, MessageSquare, Users, Brain, Zap, BarChart3 } from "lucide-react";
+import { CheckCircle, MessageSquare, Users, Brain, Zap, BarChart3, MessageCircle, Calendar, Bell } from "lucide-react";
 
 const Solutions = () => {
   const solutions = [
@@ -24,9 +24,9 @@ const Solutions = () => {
     },
     {
       icon: BarChart3,
-      title: "Feedback surveys",
-      description: "Gather insights and improve customer satisfaction",
-      features: ["Custom questionnaires", "Analytics dashboard", "Action insights"]
+      title: "Natural AI Chat",
+      description: "Engage leads instantly and turn conversations into booked appointments",
+      features: ["Smart lead qualification", "Automated scheduling", "Integrated reminders", "Real-time analytics"]
     }
   ];
 
@@ -59,10 +59,10 @@ const Solutions = () => {
         {/* Strategic Solutions */}
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
-            Strategic Automation Solutions
+            Turn Conversations into Customers
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Comprehensive AI-powered tools designed to transform your business operations
+            From first contact to booked appointment, our AI does the heavy lifting for you.
           </p>
         </div>
 
@@ -108,53 +108,76 @@ const Solutions = () => {
         <div className="animate-fade-in">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Sample Workflow
+              Turn Leads into Loyal Customers
             </h3>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              See how our automation seamlessly handles customer interactions from initial contact to conversion
+              Experience how seamless AI-driven workflows handle the entire journey — start to finish.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {workflowSteps.map((step, index) => {
-              const Icon = step.icon;
-              return (
-                 <div 
-                   key={step.title}
-                   className="relative animate-fade-in opacity-0"
-                   style={{ animationDelay: `${index * 0.3}s`, animationFillMode: 'forwards' }}
-                 >
-                   <Card className="bg-gradient-card border-0 shadow-soft hover:shadow-elegant hover-scale transition-all duration-300 h-full group">
-                     <CardContent className="p-6 text-center">
-                       <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-teazle-light-mint text-primary mb-4 group-hover:scale-110 transition-transform duration-300">
-                         <Icon className="w-6 h-6" />
-                       </div>
-                      <h4 className="font-semibold text-foreground mb-3">
-                        {step.title}
-                      </h4>
-                      <p className="text-sm text-muted-foreground leading-relaxed">
-                        {step.description}
-                      </p>
-                    </CardContent>
-                  </Card>
-                  
-                  {/* Connection Arrow */}
-                  {index < workflowSteps.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
-                      <div className="w-6 h-0.5 bg-primary opacity-30"></div>
-                      <div className="absolute -right-1 -top-1 w-2 h-2 border-r-2 border-t-2 border-primary opacity-30 rotate-45"></div>
-                    </div>
-                  )}
+            {/* Step 1 */}
+            <div className="relative">
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 hover:border-primary/30">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                    <MessageCircle className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-primary">Lead Engagement</h4>
                 </div>
-              );
-            })}
+                <p className="text-muted-foreground leading-relaxed">
+                  Your prospect clicks an ad or link and starts a conversation on Messenger or WhatsApp.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative">
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 hover:border-primary/30">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-primary">Qualification</h4>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Your AI engages naturally, answers questions, and gathers key business details.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="relative">
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 hover:border-primary/30">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                    <Calendar className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-primary">Scheduling</h4>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Prospects see your real-time availability and lock in an appointment instantly.
+                </p>
+              </div>
+            </div>
+
+            {/* Step 4 */}
+            <div className="relative">
+              <div className="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 hover:border-primary/30">
+                <div className="flex items-center mb-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                    <Bell className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="text-xl font-semibold text-primary">Reminders</h4>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  Automated follow-ups ensure they show up — with reminders sent 24h and 1h before the meeting.
+                </p>
+              </div>
+            </div>
           </div>
 
-           <div className="text-center animate-fade-in" style={{ animationDelay: '1.2s' }}>
-             <Button size="lg" className="bg-primary hover:bg-primary/90 hover:scale-105 shadow-soft hover:shadow-elegant transition-all duration-300">
-               View All Workflow Examples
-             </Button>
-           </div>
+
         </div>
       </div>
     </section>
