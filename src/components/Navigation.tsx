@@ -19,11 +19,19 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center animate-scale-in">
-            <LazyImage 
-              src={teazleLogo} 
-              alt="Teazle - Translating Vision into Reality" 
-              className="h-8 w-auto hover-scale transition-transform duration-300 !bg-transparent"
-            />
+            <button
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="cursor-pointer"
+              aria-label="Scroll to top"
+            >
+              <LazyImage 
+                src={teazleLogo} 
+                alt="Teazle - Translating Vision into Reality" 
+                className="h-8 w-auto hover-scale transition-transform duration-300 !bg-transparent"
+              />
+            </button>
           </div>
 
           {/* Desktop Navigation */}

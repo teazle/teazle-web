@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { LazyImage } from "@/components/ui/lazy-image";
 import { Phone, Mail, ArrowRight } from "lucide-react";
-import page8Image from "@/assets/page-8.webp";
+import contactusImage from "@/assets/contactus.webp";
 
 const Contact = () => {
   const contactInfo = [
@@ -81,12 +81,12 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="animate-fade-in">
-            {/* Page 8 Image */}
-            <div className="mb-8">
+            {/* Contact Image */}
+            <div className="h-[85%] p-8 flex items-center justify-center">
               <LazyImage 
-                src={page8Image} 
+                src={contactusImage} 
                 alt="Professional using mobile device" 
-                className="w-full h-64 object-cover rounded-2xl shadow-elegant hover:scale-105 transition-transform duration-700"
+                className="w-full h-full object-contain rounded-2xl shadow-elegant hover:scale-105 transition-transform duration-700"
               />
             </div>
           </div>

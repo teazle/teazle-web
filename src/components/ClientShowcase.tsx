@@ -16,10 +16,6 @@ const ClientShowcase: React.FC = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* CTA Content - Now at the top */}
         <div className="text-center space-y-8 mb-16 max-w-4xl mx-auto">
-          <div className="inline-block px-6 py-3 bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm rounded-full text-primary font-semibold text-sm border border-primary/20">
-            ✨ Trusted by 500+ Businesses
-          </div>
-          
           <h2 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-foreground to-primary bg-clip-text text-transparent leading-tight">
             Ready to Transform Your Business?
           </h2>
