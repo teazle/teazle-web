@@ -48,7 +48,7 @@ const Footer = () => {
               <div className="flex items-center mb-6">
                 <LazyImage 
                   src={teazleLogo} 
-                  alt="Teazle" 
+                  alt="Teazle AI Automation - Footer Logo" 
                   className="h-8 w-auto !bg-transparent"
                 />
               </div>

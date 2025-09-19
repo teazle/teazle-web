@@ -28,7 +28,7 @@ const Navigation = () => {
             >
               <LazyImage 
                 src={teazleLogo} 
-                alt="Teazle - Translating Vision into Reality" 
+                alt="Teazle AI Automation Logo - Business Productivity Solutions" 
                 className="h-8 w-auto hover-scale transition-transform duration-300 !bg-transparent"
               />
             </button>
@@ -73,6 +73,7 @@ const Navigation = () => {
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Toggle navigation menu"
+              className="p-3 hover:bg-accent/50 transition-all duration-200"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -80,37 +81,41 @@ const Navigation = () => {
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <div className="md:hidden animate-fade-in">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-background border-t border-border">
-              {navigationItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 text-foreground hover:text-primary transition-smooth font-medium"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </a>
-              ))}
-              <div className="px-3 py-2">
-                <Button 
-                  variant="default" 
-                  className="w-full bg-primary hover:bg-primary/90"
-                  onClick={() => {
-                    const contactSection = document.getElementById('contact');
-                    if (contactSection) {
-                      contactSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                    setIsOpen(false);
-                  }}
-                >
-                  Get Started
-                </Button>
-              </div>
+        <div className={`md:hidden transition-all duration-300 ease-in-out ${
+          isOpen 
+            ? 'max-h-96 opacity-100 translate-y-0' 
+            : 'max-h-0 opacity-0 -translate-y-2 overflow-hidden'
+        }`}>
+          <div className="px-4 pt-4 pb-6 space-y-2 bg-background/95 backdrop-blur-md border-t border-border/50 shadow-lg">
+            {navigationItems.map((item, index) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="block px-4 py-3 text-foreground hover:text-primary hover:bg-accent/30 rounded-lg transition-all duration-200 font-medium text-lg active:scale-95"
+                onClick={() => setIsOpen(false)}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {item.name}
+              </a>
+            ))}
+            <div className="pt-4">
+              <Button 
+                variant="default" 
+                size="lg"
+                className="w-full bg-primary hover:bg-primary/90 hover:scale-105 transition-all duration-200 shadow-soft text-lg py-3"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                  setIsOpen(false);
+                }}
+              >
+                Get Started
+              </Button>
             </div>
           </div>
-        )}
+        </div>
       </div>
     </nav>
   );

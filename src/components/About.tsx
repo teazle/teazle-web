@@ -83,7 +83,7 @@ const About = () => {
               <CardContent className="p-0">
                 <LazyImage 
                   src={businessWoman}
-                  alt="Professional business woman using automation solutions"
+                  alt="Professional businesswoman using AI automation tools for productivity"
                   className="w-full h-[500px] object-cover hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
@@ -131,7 +131,7 @@ const About = () => {
               <CardContent className="p-0 h-full">
                 <LazyImage 
                   src={automationDevice}
-                  alt="Teazle automation device in modern office environment"
+                  alt="AI automation kiosk device - Teazle enterprise technology solution"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </CardContent>
