@@ -4,16 +4,20 @@ import { LazyImage } from "@/components/ui/lazy-image";
 import { FloatingElement, TiltCard, GlowEffect } from "@/components/ui/3d-animations";
 import { ArrowRight, Play } from "lucide-react";
 import namecardImage from "@/assets/namecard image.webp";
+import WebGLBackground from "./WebGLBackground";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-hero overflow-hidden py-24 sm:py-28 lg:py-32">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5" style={{ zIndex: 1 }}>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,_hsl(var(--teazle-teal))_1px,_transparent_0)] bg-[length:40px_40px]"></div>
       </div>
       
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      {/* WebGL Background Animation */}
+      <WebGLBackground />
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative" style={{ zIndex: 10 }}>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Content */}

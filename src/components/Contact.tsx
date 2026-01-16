@@ -9,9 +9,9 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Call Us",
-      details: "+65 91031399",
+      details: "+65 91051399",
       description: "Available 24/7 for urgent inquiries",
-      action: () => window.open("tel:+6591031399", "_self")
+      action: () => window.open("tel:+6591051399", "_self")
     },
     {
       icon: Mail,
